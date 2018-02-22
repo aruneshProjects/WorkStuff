@@ -48,10 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Tests\test1.j" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir) 
-Gplex.exe scanner.lex</PreBuildEvent>
+gplex.exe /unicode scanner.lex</PreBuildEvent>
   </PropertyGroup>
 </Project>

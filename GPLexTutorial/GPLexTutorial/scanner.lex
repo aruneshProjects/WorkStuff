@@ -10,8 +10,8 @@ else                         { return (int)Tokens.ELSE; }
 int                          { return (int)Tokens.INT; } 
 bool                         { return (int)Tokens.BOOL; } 
  
-{letter}({letter}|{digit})*  { return (int)Tokens.IDENT; } 
-{digit}+                     { return (int)Tokens.NUMBER; } 
+{letter}({letter}|{digit})*  { yylval.name = yytext; return (int)Tokens.IDENT; }
+{digit}+                     { yylval.num = int.Parse(yytext); return (int)Tokens.NUMBER; }
  
 "="                          { return '='; } 
 "+"                          { return '+'; } 
