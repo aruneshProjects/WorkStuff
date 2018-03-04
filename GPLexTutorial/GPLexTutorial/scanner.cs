@@ -5,10 +5,10 @@
 //  See accompanying file GPLEXcopyright.rtf.
 //
 //  GPLEX Version:  1.2.2
-//  Machine:  VDI-VL04-017
-//  DateTime: 1/03/2018 5:50:29 PM
-//  UserName: n10282548
-//  GPLEX input file <scanner.lex - 1/03/2018 5:27:36 PM>
+//  Machine:  DESKTOP-0A7SJHH
+//  DateTime: 4/03/2018 9:47:30 PM
+//  UserName: arune
+//  GPLEX input file <scanner.lex - 4/03/2018 9:45:03 PM>
 //  GPLEX frame file <embedded resource>
 //
 //  Option settings: unicode, parser, minimize
@@ -123,13 +123,14 @@ namespace GPLexTutorial
         
         enum Result {accept, noMatch, contextFound};
 
-        const int maxAccept = 24;
-        const int initial = 25;
+        const int maxAccept = 25;
+        const int initial = 26;
         const int eofNum = 0;
         const int goStart = -1;
         const int INITIAL = 0;
 
 #region user code
+int lines = 0;
 #endregion user code
 
         int state;
@@ -161,7 +162,7 @@ namespace GPLexTutorial
         }
     };
 
-    static int[] startState = new int[] {25, 0};
+    static int[] startState = new int[] {26, 0};
 
 #region CompressedCharacterMap
     //
@@ -190,17 +191,17 @@ namespace GPLexTutorial
     }
 #endregion
 
-    static Table[] NxS = new Table[26] {
+    static Table[] NxS = new Table[27] {
 /* NxS[   0] */ new Table(0, 0, 0, null),
 /* NxS[   1] */ new Table(0, 0, -1, null),
-/* NxS[   2] */ new Table(1, 11, -1, new sbyte[] {3, 22, 3, 3, 3, 23, 
+/* NxS[   2] */ new Table(1, 11, -1, new sbyte[] {3, 23, 3, 3, 3, 24, 
           3, 3, 3, 3, 3}),
 /* NxS[   3] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
           -1, -1, -1, -1, -1}),
-/* NxS[   4] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 19, 3, 3, 
+/* NxS[   4] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 20, 3, 3, 
           3, 3, 3, 3, 3}),
 /* NxS[   5] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 3, 3, 
-          3, 3, 16, 3, 3}),
+          3, 3, 17, 3, 3}),
 /* NxS[   6] */ new Table(11, 1, -1, new sbyte[] {6}),
 /* NxS[   7] */ new Table(0, 0, -1, null),
 /* NxS[   8] */ new Table(0, 0, -1, null),
@@ -211,26 +212,27 @@ namespace GPLexTutorial
 /* NxS[  13] */ new Table(0, 0, -1, null),
 /* NxS[  14] */ new Table(0, 0, -1, null),
 /* NxS[  15] */ new Table(0, 0, -1, null),
-/* NxS[  16] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 3, 3, 
-          3, 3, 17, 3, 3}),
-/* NxS[  17] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 18, 3, 3, 
+/* NxS[  16] */ new Table(0, 0, -1, null),
+/* NxS[  17] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 3, 3, 
+          3, 3, 18, 3, 3}),
+/* NxS[  18] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 19, 3, 3, 
           3, 3, 3, 3, 3}),
-/* NxS[  18] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
+/* NxS[  19] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
           -1, -1, -1, -1, -1}),
-/* NxS[  19] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 20, 3, 
+/* NxS[  20] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 21, 3, 
           3, 3, 3, 3, 3}),
-/* NxS[  20] */ new Table(1, 11, -1, new sbyte[] {3, 3, 21, 3, 3, 3, 
+/* NxS[  21] */ new Table(1, 11, -1, new sbyte[] {3, 3, 22, 3, 3, 3, 
           3, 3, 3, 3, 3}),
-/* NxS[  21] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
-          -1, -1, -1, -1, -1}),
 /* NxS[  22] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
           -1, -1, -1, -1, -1}),
-/* NxS[  23] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 3, 3, 
-          24, 3, 3, 3, 3}),
-/* NxS[  24] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
+/* NxS[  23] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
           -1, -1, -1, -1, -1}),
-/* NxS[  25] */ new Table(8, 18, 3, new sbyte[] {5, 3, 3, 6, 7, 8, 
-          9, 10, 11, 12, 13, 14, 15, 15, 1, 2, 3, 4}),
+/* NxS[  24] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 3, 3, 
+          25, 3, 3, 3, 3}),
+/* NxS[  25] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
+          -1, -1, -1, -1, -1}),
+/* NxS[  26] */ new Table(8, 18, 3, new sbyte[] {5, 3, 3, 6, 7, 8, 
+          9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4}),
     };
 
 int NextState() {
@@ -672,11 +674,11 @@ throw new Exception(
         case 3:
         case 4:
         case 5:
-        case 16:
         case 17:
-        case 19:
+        case 18:
         case 20:
-        case 23:
+        case 21:
+        case 24:
 yylval.name = yytext; return (int)Tokens.IDENT;
             break;
         case 6:
@@ -707,18 +709,21 @@ return '}';
 return ';';
             break;
         case 15:
+lines ++;
+            break;
+        case 16:
 /* skip whitespace */
             break;
-        case 18:
+        case 19:
 return (int)Tokens.BOOL;
             break;
-        case 21:
+        case 22:
 return (int)Tokens.ELSE;
             break;
-        case 22:
+        case 23:
 return (int)Tokens.IF;
             break;
-        case 24:
+        case 25:
 return (int)Tokens.INT;
             break;
         default:
@@ -778,6 +783,15 @@ return (int)Tokens.INT;
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal void ECHO() { Console.Out.Write(yytext); }
         
+#region UserCodeSection
+
+public override void yyerror( string format, params object[] args )
+{
+    System.Console.Error.WriteLine("Error: line {0}, {1}", lines,
+        String.Format(format, args));
+}
+
+#endregion
     } // end class $Scanner
 
 // ==============================================================

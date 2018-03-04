@@ -1,3 +1,14 @@
+
+// ==========================================================================
+//  GPLEX error listing for lex source file <scanner.lex>
+// ==========================================================================
+//  Version:  1.2.2
+//  Machine:  DESKTOP-0A7SJHH
+//  DateTime: 4/03/2018 9:19:13 PM
+//  UserName: arune
+// ==========================================================================
+
+
 %namespace GPLexTutorial 
 
 %{
@@ -34,11 +45,28 @@ bool                         { return (int)Tokens.BOOL; }
 										String.Format(                                          
 											"unexpected character '{0}'", yytext));                               
 							}
- 
-%% 
 
 public override void yyerror( string format, params object[] args )
 {
+// Error: Invalid production rule
+// Error: Invalid single-line action
+// Error: Parser error <Syntax error, unexpected {> 
+// -------------------------------------------------
     System.Console.Error.WriteLine("Error: line {0}, {1}", lines,
+//-------------------------------------------------------^
+// Error: Expected character <')'> 
+// --------------------------------
         String.Format(format, args));
+//--------------------------^-----^^^
+// Error: Expected character <')'> 
+// Error: Invalid production rule
+// Error: Invalid single-line action
+// Error: Invalid production rule
+// Error: Invalid production rule
+// ---------------------------------
 }
+// Error: Invalid production rule
+// ------------------------------
+ 
+%% // ==========================================================================
+

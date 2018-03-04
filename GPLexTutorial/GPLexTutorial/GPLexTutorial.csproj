@@ -54,6 +54,7 @@
     <None Include="App.config" />
     <None Include="parser.y" />
     <None Include="Tests\test1.j" />
+    <None Include="Tests\test2.j" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
