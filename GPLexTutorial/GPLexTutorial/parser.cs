@@ -4,7 +4,7 @@
 
 // GPPG version 1.5.2
 // Machine:  DESKTOP-0A7SJHH
-// DateTime: 4/03/2018 9:47:30 PM
+// DateTime: 6/03/2018 10:27:47 PM
 // UserName: arune
 // Input file <parser.y - 4/03/2018 9:47:25 PM>
 
@@ -19,9 +19,9 @@ using QUT.Gppg;
 
 namespace GPLexTutorial
 {
-public enum Tokens {
-    error=127,EOF=128,NUMBER=129,IDENT=130,IF=131,ELSE=132,
-    INT=133,BOOL=134};
+//public enum Tokens {
+//    error=127,EOF=128,NUMBER=129,IDENT=130,IF=131,ELSE=132,
+//    INT=133,BOOL=134};
 
 public struct ValueType
 #line 4 "parser.y"

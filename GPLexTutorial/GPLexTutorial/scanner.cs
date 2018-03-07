@@ -6,9 +6,9 @@
 //
 //  GPLEX Version:  1.2.2
 //  Machine:  DESKTOP-0A7SJHH
-//  DateTime: 4/03/2018 9:47:30 PM
+//  DateTime: 7/03/2018 11:14:41 PM
 //  UserName: arune
-//  GPLEX input file <scanner.lex - 4/03/2018 9:45:03 PM>
+//  GPLEX input file <scanner.lex - 7/03/2018 11:04:10 PM>
 //  GPLEX frame file <embedded resource>
 //
 //  Option settings: unicode, parser, minimize
@@ -123,8 +123,8 @@ namespace GPLexTutorial
         
         enum Result {accept, noMatch, contextFound};
 
-        const int maxAccept = 25;
-        const int initial = 26;
+        const int maxAccept = 29;
+        const int initial = 1;
         const int eofNum = 0;
         const int goStart = -1;
         const int INITIAL = 0;
@@ -162,20 +162,20 @@ int lines = 0;
         }
     };
 
-    static int[] startState = new int[] {26, 0};
+    static int[] startState = new int[] {1, 0};
 
 #region CompressedCharacterMap
     //
-    // There are 22 equivalence classes
+    // There are 25 equivalence classes
     // There are 2 character sequence regions
     // There are 1 tables, 126 entries
     // There are 1 runs, 0 singletons
     // Decision tree depth is 1
     //
     static sbyte[] mapC0 = new sbyte[126] {
-/*     '\0' */ 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 20, 0, 0, 21, 0, 0, 
+/*     '\0' */ 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 22, 0, 21, 23, 0, 0, 
 /*   '\x10' */ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-/*   '\x20' */ 21, 0, 0, 0, 0, 0, 0, 0, 15, 16, 0, 13, 0, 0, 0, 0, 
+/*   '\x20' */ 24, 0, 0, 0, 0, 0, 0, 0, 15, 16, 0, 13, 0, 0, 0, 0, 
 /*      '0' */ 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 0, 19, 14, 12, 0, 0, 
 /*      '@' */ 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 
 /*      'P' */ 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0, 0, 0, 0, 0, 
@@ -191,48 +191,56 @@ int lines = 0;
     }
 #endregion
 
-    static Table[] NxS = new Table[27] {
+    static Table[] NxS = new Table[30] {
 /* NxS[   0] */ new Table(0, 0, 0, null),
-/* NxS[   1] */ new Table(0, 0, -1, null),
-/* NxS[   2] */ new Table(1, 11, -1, new sbyte[] {3, 23, 3, 3, 3, 24, 
-          3, 3, 3, 3, 3}),
-/* NxS[   3] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
-          -1, -1, -1, -1, -1}),
-/* NxS[   4] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 20, 3, 3, 
-          3, 3, 3, 3, 3}),
-/* NxS[   5] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 3, 3, 
-          3, 3, 17, 3, 3}),
-/* NxS[   6] */ new Table(11, 1, -1, new sbyte[] {6}),
-/* NxS[   7] */ new Table(0, 0, -1, null),
+/* NxS[   1] */ new Table(8, 21, 4, new sbyte[] {6, 4, 4, 7, 8, 9, 
+          10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2, 3, 4, 5}),
+/* NxS[   2] */ new Table(0, 0, -1, null),
+/* NxS[   3] */ new Table(1, 11, -1, new sbyte[] {4, 27, 4, 4, 4, 28, 
+          4, 4, 4, 4, 4}),
+/* NxS[   4] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 4, 4, 4, 
+          4, 4, 4, 4, 4}),
+/* NxS[   5] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 24, 4, 4, 
+          4, 4, 4, 4, 4}),
+/* NxS[   6] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 4, 4, 4, 
+          4, 4, 21, 4, 4}),
+/* NxS[   7] */ new Table(11, 1, -1, new sbyte[] {7}),
 /* NxS[   8] */ new Table(0, 0, -1, null),
 /* NxS[   9] */ new Table(0, 0, -1, null),
 /* NxS[  10] */ new Table(0, 0, -1, null),
-/* NxS[  11] */ new Table(0, 0, -1, null),
-/* NxS[  12] */ new Table(0, 0, -1, null),
+/* NxS[  11] */ new Table(15, 10, -1, new sbyte[] {20, 20, -1, -1, -1, -1, 
+          -1, 20, 20, 20}),
+/* NxS[  12] */ new Table(15, 10, -1, new sbyte[] {20, 20, -1, -1, -1, -1, 
+          -1, 20, 20, 20}),
 /* NxS[  13] */ new Table(0, 0, -1, null),
 /* NxS[  14] */ new Table(0, 0, -1, null),
 /* NxS[  15] */ new Table(0, 0, -1, null),
-/* NxS[  16] */ new Table(0, 0, -1, null),
-/* NxS[  17] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 3, 3, 
-          3, 3, 18, 3, 3}),
-/* NxS[  18] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 19, 3, 3, 
-          3, 3, 3, 3, 3}),
-/* NxS[  19] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
-          -1, -1, -1, -1, -1}),
-/* NxS[  20] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 21, 3, 
-          3, 3, 3, 3, 3}),
-/* NxS[  21] */ new Table(1, 11, -1, new sbyte[] {3, 3, 22, 3, 3, 3, 
-          3, 3, 3, 3, 3}),
-/* NxS[  22] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
-          -1, -1, -1, -1, -1}),
-/* NxS[  23] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
-          -1, -1, -1, -1, -1}),
-/* NxS[  24] */ new Table(1, 11, -1, new sbyte[] {3, 3, 3, 3, 3, 3, 
-          25, 3, 3, 3, 3}),
-/* NxS[  25] */ new Table(12, 11, 3, new sbyte[] {-1, -1, -1, -1, -1, -1, 
-          -1, -1, -1, -1, -1}),
-/* NxS[  26] */ new Table(8, 18, 3, new sbyte[] {5, 3, 3, 6, 7, 8, 
-          9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4}),
+/* NxS[  16] */ new Table(20, 1, -1, new sbyte[] {16}),
+/* NxS[  17] */ new Table(21, 1, -1, new sbyte[] {17}),
+/* NxS[  18] */ new Table(15, 10, -1, new sbyte[] {20, 20, -1, -1, -1, -1, 
+          -1, 18, 20, 20}),
+/* NxS[  19] */ new Table(15, 10, -1, new sbyte[] {20, 20, -1, -1, -1, -1, 
+          -1, 20, 19, 20}),
+/* NxS[  20] */ new Table(15, 10, -1, new sbyte[] {20, 20, -1, -1, -1, -1, 
+          -1, 20, 20, 20}),
+/* NxS[  21] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 4, 4, 4, 
+          4, 4, 22, 4, 4}),
+/* NxS[  22] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 23, 4, 4, 
+          4, 4, 4, 4, 4}),
+/* NxS[  23] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 4, 4, 4, 
+          4, 4, 4, 4, 4}),
+/* NxS[  24] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 4, 25, 4, 
+          4, 4, 4, 4, 4}),
+/* NxS[  25] */ new Table(1, 11, -1, new sbyte[] {4, 4, 26, 4, 4, 4, 
+          4, 4, 4, 4, 4}),
+/* NxS[  26] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 4, 4, 4, 
+          4, 4, 4, 4, 4}),
+/* NxS[  27] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 4, 4, 4, 
+          4, 4, 4, 4, 4}),
+/* NxS[  28] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 4, 4, 4, 
+          29, 4, 4, 4, 4}),
+/* NxS[  29] */ new Table(1, 11, -1, new sbyte[] {4, 4, 4, 4, 4, 4, 
+          4, 4, 4, 4, 4}),
     };
 
 int NextState() {
@@ -242,7 +250,7 @@ int NextState() {
         unchecked {
             int rslt;
             int idx = MapC(code) - NxS[state].min;
-            if (idx < 0) idx += 22;
+            if (idx < 0) idx += 25;
             if ((uint)idx >= (uint)NxS[state].rng) rslt = NxS[state].dflt;
             else rslt = NxS[state].nxt[idx];
             return rslt;
@@ -666,64 +674,76 @@ int NextState() {
                 return (int)Tokens.EOF;
             break;
         case 1:
+/* skip whitespace */
+            break;
+        case 2:
 throw new Exception(                                      
 										String.Format(                                          
 											"unexpected character '{0}'", yytext));
             break;
-        case 2:
         case 3:
         case 4:
         case 5:
-        case 17:
-        case 18:
-        case 20:
+        case 6:
         case 21:
+        case 22:
         case 24:
+        case 25:
+        case 28:
 yylval.name = yytext; return (int)Tokens.IDENT;
             break;
-        case 6:
+        case 7:
 yylval.num = int.Parse(yytext); return (int)Tokens.NUMBER;
             break;
-        case 7:
+        case 8:
 return '=';
             break;
-        case 8:
+        case 9:
 return '+';
             break;
-        case 9:
+        case 10:
 return '<';
             break;
-        case 10:
+        case 11:
 return '(';
             break;
-        case 11:
+        case 12:
 return ')';
             break;
-        case 12:
+        case 13:
 return '{';
             break;
-        case 13:
+        case 14:
 return '}';
             break;
-        case 14:
-return ';';
-            break;
         case 15:
-lines ++;
+return ';';
             break;
         case 16:
 /* skip whitespace */
             break;
-        case 19:
-return (int)Tokens.BOOL;
+        case 17:
+/* skip whitespace */
             break;
-        case 22:
-return (int)Tokens.ELSE;
+        case 18:
+lines ++;
+            break;
+        case 19:
+lines ++;
+            break;
+        case 20:
+lines ++;
             break;
         case 23:
+return (int)Tokens.BOOL;
+            break;
+        case 26:
+return (int)Tokens.ELSE;
+            break;
+        case 27:
 return (int)Tokens.IF;
             break;
-        case 25:
+        case 29:
 return (int)Tokens.INT;
             break;
         default:

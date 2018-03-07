@@ -26,9 +26,14 @@ bool                         { return (int)Tokens.BOOL; }
 "}"                          { return '}'; } 
 ";"                          { return ';'; } 
  
-[\n]						 { lines ++; }
-[ \t\r]                    /* skip whitespace */ 
- 
+[\s]*						 /* skip whitespace */					 
+[\t]*						 /* skip whitespace */
+[\f]*						 /* skip whitespace */
+[\n]*						 {lines ++;}
+[\r]*						 {lines ++;}
+[ (\r\n)]*					 {lines ++;}
+
+
 .                           {                                   
 									throw new Exception(                                      
 										String.Format(                                          

@@ -7,16 +7,21 @@ using System.Threading.Tasks;
 namespace GPLexTutorial
 {
 
-    //public enum Tokens
-    //{
-    //    NUMBER = 258,
-    //    IDENT = 259,
-    //    IF = 260,
-    //    ELSE = 261,
-    //    INT = 262,
-    //    BOOL = 263,
-    //    EOF = 264
-    //};
+
+    //public enum Tokens {
+    //    error=127,EOF=128,NUMBER=129,IDENT=130,IF=131,ELSE=132,
+    //    INT=133,BOOL=134};
+    public enum Tokens
+    {
+        error = 127,
+        NUMBER = 258,
+        IDENT = 259,
+        IF = 260,
+        ELSE = 261,
+        INT = 262,
+        BOOL = 263,
+        EOF = 264
+    };
 
     //public struct MyValueType
     //{
@@ -35,42 +40,44 @@ namespace GPLexTutorial
         static void Main(string[] args)
         {
             Scanner scanner = new Scanner(new System.IO.FileStream(args[0], System.IO.FileMode.Open));
-            Parser parser = new Parser(scanner);
-            parser.Parse();
+            //Parser parser = new Parser(scanner);
+            //parser.Parse();
 
-            //Tokens token;
-            //do
-            //{
-            //    token = (Tokens)scanner.yylex();
-            //    switch (token)
-            //    {
-            //        case Tokens.NUMBER:
-            //            Console.WriteLine("NUMBER ({0})", scanner.yylval.num);
-            //            break;
-            //        case Tokens.IDENT:
-            //            Console.WriteLine("IDENT ({0})", scanner.yylval.name);
-            //            break;
-            //        case Tokens.IF:
-            //            Console.WriteLine("IF");
-            //            break;
-            //        case Tokens.ELSE:
-            //            Console.WriteLine("ELSE");
-            //            break;
-            //        case Tokens.INT:
-            //            Console.WriteLine("INT");
-            //            break;
-            //        case Tokens.BOOL:
-            //            Console.WriteLine("BOOL");
-            //            break;
-            //        case Tokens.EOF:
-            //            Console.WriteLine("EOF");
-            //            break;
-            //        default:
-            //            Console.WriteLine("'{0}'", (char)token);
-            //            break;
-            //    }
-            //}
-            //while (token != Tokens.EOF);
+            Tokens token;
+            do
+            {
+                //int x = scanner.yylex();
+                token = (Tokens)scanner.yylex();
+                switch (token)
+                {
+                    case Tokens.NUMBER:
+                        Console.WriteLine("NUMBER ({0})", scanner.yylval.num);
+                        break;
+                    case Tokens.IDENT:
+                        Console.WriteLine("IDENT ({0})", scanner.yylval.name);
+                        break;
+                    case Tokens.IF:
+                        Console.WriteLine("IF");
+                        break;
+                    case Tokens.ELSE:
+                        Console.WriteLine("ELSE");
+                        break;
+                    case Tokens.INT:
+                        Console.WriteLine("INT");
+                        break;
+                    case Tokens.BOOL:
+                        Console.WriteLine("BOOL");
+                        break;
+                    case Tokens.EOF:
+                        Console.WriteLine("EOF");
+                        break;
+                    default:
+                        Console.WriteLine("'{0}'", (char)token);
+                        break;
+                }
+            }
+            while (token != Tokens.EOF);
+            Console.Read();
         }
     }
 }

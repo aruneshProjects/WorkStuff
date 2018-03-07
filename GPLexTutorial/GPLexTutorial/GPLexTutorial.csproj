@@ -60,7 +60,7 @@
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir)
 gplex.exe /unicode scanner.lex
-Gppg.exe /gplex parser.y &gt; parser.cs
+
 </PreBuildEvent>
   </PropertyGroup>
 </Project>
